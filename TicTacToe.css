@@ -13,8 +13,13 @@ body {
   margin: 0;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
+}
+
+p {
+  display: inline-flex;
 }
 
 .board {
@@ -125,31 +130,21 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(88, 224, 140);
+  background-color: rgb(26, 110, 189);
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 5rem;
   flex-direction: column;
-  animation: fadebackground 3s;
 }
 
-@keyframes fadebackground {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: rgb(88, 224, 140);
-  }
-}
-
-.winning-message button {
+/* .winning-message button {
   font-size: 3rem;
   background-color: white;
   border: 1px solid black;
   padding: 0.25em 0.5em;
   cursor: pointer;
-}
+} */
 
 .winning-message button:hover {
   background-color: grey;

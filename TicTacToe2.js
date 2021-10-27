@@ -14,6 +14,7 @@ const cellElements = document.querySelectorAll('[data-cell]');
 const board = $('#board');
 const winningMessageElement = $('#winningMessage');
 const restartButton = $('#restartButton')
+const yourTurn = $('.yourTurn')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 let circleTurn 
 
@@ -23,6 +24,7 @@ restartButton.on('click', startGame);
 
 function startGame(){
     circleTurn = false
+    yourTurnText();
     cellElements.forEach(cell => {
         cell.classList.remove(X_CLASS)
         cell.classList.remove(CIRCLE_CLASS)
@@ -42,7 +44,8 @@ function handleClick (e) {
     } else if (isDraw()){
         endGame(true)
     } else {
-    swapturns();
+        swapturns();
+        yourTurnText();
     setBoardHoverClass()
     }
 }
@@ -72,6 +75,13 @@ function placeMark(cell, currentClass) {
 
 function swapturns(){
     circleTurn = !circleTurn
+}
+
+function yourTurnText (){
+    if (circleTurn == false) {
+        yourTurn.text('X')
+    }else
+    yourTurn.text('O')
 }
 
 function setBoardHoverClass(){
